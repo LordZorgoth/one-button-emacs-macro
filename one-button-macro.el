@@ -50,7 +50,7 @@
 	     prefix-or-register     
 	   (one-button-macro-translate-prefix-to-char prefix-or-register))))
     (if (equal register one-button-macro-requested-register)
-	(print "Refusing to execute macro within itself.")
+	(error "Refusing to execute macro within itself.")
       ;; The if statement here is confirming that there is a macro in the register.
       (if (cl-search "kmacro-execute-from-register"
     		     (format "%s" (get-register register)))
