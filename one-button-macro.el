@@ -48,7 +48,15 @@
   (let ((register	
 	 (if (> prefix-or-register 9)
 	     prefix-or-register     
-	   (one-button-macro-translate-prefix-to-char prefix-or-register))))
+	   (one-button-macro-translate-prefix-to-char prefix-or-register)))
+	;; This let binding ensures that we aren't prevented from executing
+	;; a macro just because a previous definition attempt was interrupted.
+	;; It also allows the harmless execution of a macro within a
+	;; recursive edit query (this is harmless because it is not saved).									   
+	(one-button-macro-requested-register
+	 (if defining-kbd-macro
+	     one-button-macro-requested-register
+	   nil))))
     (if (equal register one-button-macro-requested-register)
 	(error "Refusing to execute macro within itself.")
       ;; The if statement here is confirming that there is a macro in the register.
