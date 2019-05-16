@@ -1,6 +1,6 @@
 I wrote this function because by default, the emacs keyboard macro system is clunky to access. This was never really intended for public consumption, so it is barely documented. This is how to use it.
 
-1. Execute the ELisp however you feel like doing that.
+1. Execute the ELisp however you prefer.
 
 2. Bind a key to one-button-macro-function, e.g. `(global-set-key [f3] 'one-button-macro-function)`.
 
