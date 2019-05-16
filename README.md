@@ -12,7 +12,7 @@ When you press the hotkey without a prefix argument while no macro is being defi
 
 5. Emacs, for good reasons, doesn't generally let you execute macros while defining macros. However, I let you do this if you want to. To execute a macro while definining a macro using `<your-hotkey>`, use `C-<other digit> <your-hotkey>` while defining a macro. I have done nothing to make this safer, so use it wisely. I also provided a variable, `one-button-macro-disable-execute-during-definition`, which disables this functionality if set to `t`. 
 
-6. Do not attempt to use the shortcut in 5.\ while n a recursive edit query during a macro definition. Rather, simply execute the macro in the usual way, with no prefix. `defining-kbd-macro` is nil during a recursive edit query, so the prefix key will define a new keyboard macro, which is going to change the value of `one-button-macro-requested-register`. If you accidentally do this, just hit `C-<original-digit> <your-hotkey> C-g` before exiting the recursive edit to make sure `one-button-macro-requested-register` has the correct value.
+6. Do not attempt to use the shortcut in 5. while n a recursive edit query during a macro definition. Rather, simply execute the macro in the usual way, with no prefix. `defining-kbd-macro` is nil during a recursive edit query, so the prefix key will define a new keyboard macro, which is going to change the value of `one-button-macro-requested-register`. If you accidentally do this, just hit `C-<original-digit> <your-hotkey> C-g` before exiting the recursive edit to make sure `one-button-macro-requested-register` has the correct value.
 
 **Note on Emacs macros**
 
