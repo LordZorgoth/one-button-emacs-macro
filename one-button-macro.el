@@ -45,11 +45,10 @@
 
 (defun one-button-macro-execute-during-definition (prefix-or-register)
   (interactive "P")
-  (let ((register nil))
-    (if (> prefix-or-register 9)
-	(setq register prefix-or-register)
-      (setq register
-	    (one-button-macro-translate-prefix-to-char prefix-or-register)))
+  (let ((register	
+	 (if (> prefix-or-register 9)
+	     prefix-or-register     
+	   (one-button-macro-translate-prefix-to-char prefix-or-register))))
     ;; The if statement here is confirming that there is a macro in the register.
     (if (cl-search "kmacro-execute-from-register"
     		   (format "%s" (get-register register)))
