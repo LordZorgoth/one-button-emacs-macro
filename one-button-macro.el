@@ -44,7 +44,7 @@
   (setq one-button-macro-requested-register nil))
 
 (defun one-button-macro-execute-during-definition (prefix-or-register)
-  (interactive "p")
+  (interactive "P")
   (if (> prefix-or-register 9)
       (setq register prefix-or-register)
     (setq register
