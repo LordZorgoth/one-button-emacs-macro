@@ -1,4 +1,4 @@
-I wrote this function because by default, the emacs keyboard macro system is clunky to access. This was never really intended for public consumption, so it is barely documented. This is how to use it.
+I wrote this function because by default, the emacs keyboard macro system is clunky to access. This was never really intended for public consumption, so it is only slightly documented. This is how to use it.
 
 1. Execute the ELisp however you prefer.
 
